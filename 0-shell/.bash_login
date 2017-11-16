@@ -1,0 +1,43 @@
+#!/bin/bash
+
+# ~/.bash_login
+
+########
+### Script Debugger
+
+SCRIPT_DEBUG=true
+#SCRIPT_DEBUG=false
+
+if $SCRIPT_DEBUG; then echo "    ~/.bash_login sourced."; fi
+
+########
+### Source interactive bash scripts in  ~/.bash_login.d
+
+# Next we source any interactive bash interface specific files found
+# in ~/.bash_profile.d
+#
+# Keep the ~/.bash_profile.d directory tidy!
+
+if $SCRIPT_DEBUG; then echo "        ~/.bash_login.d sourced."; fi
+
+if [ -d ~/.bash_login.d ]; then
+  for file in ~/.bash_login.d/*.sh; do
+    source $file
+    if $SCRIPT_DEBUG; then echo "             ${file##*/} completed."; fi
+  done
+fi
+
+if $SCRIPT_DEBUG; then echo "        ~/.bash_login.d completed."; fi
+
+# Source any local and private settings that bash interatictive specific
+# that should not be under version control. ~/.bash_profile.local should be
+# added to ~/.gitignore
+
+if [ -f ~/.bash_login.local ]; then source ~/.bash_login.local; fi
+
+#######
+### ~/.profile Complete
+
+# All bash interface specific functionality has been executed.
+
+if $SCRIPT_DEBUG; then echo "    ~/.bash_login completed."; fi

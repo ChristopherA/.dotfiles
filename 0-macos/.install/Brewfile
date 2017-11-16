@@ -1,0 +1,22 @@
+# specify a directory to install casks
+cask_args appdir: '/Applications'
+# set taps
+tap "homebrew/core"
+tap "homebrew/bundle"
+tap "caskroom/cask"
+# install packages
+# install git related packages
+brew "git"
+brew "git-extras"
+brew "hub"
+# install bash related packages
+brew "bash-completion"
+# install GPG
+brew "gnupg"
+brew "pinentry-mac"
+
+# install other packages
+brew "wget"
+
+# install casks
+cask "atom", args: { appdir: "/Applications" }
