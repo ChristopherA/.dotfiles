@@ -9,7 +9,7 @@
 	mail = ChristopherA@LifeWithAlacrity.com
 	signingKey = FDFE14A54ECB30FC5D2274EFF8D36C91357405ED
 [credential]
-	helper = osxkeychain
+	helper = cache
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true
