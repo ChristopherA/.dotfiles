@@ -9,13 +9,13 @@
 	mail = ChristopherA@LifeWithAlacrity.com
 	signingKey = FDFE14A54ECB30FC5D2274EFF8D36C91357405ED
 [credential]
-	helper = cache
+	helper = osxkeychain
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 [core]
-	excludesfile = /Users/christophera/.gitignore_global
+	excludesfile = /Volumes/Pool/Users/christophera/.gitignore_global
 [commit]
 	gpgsign = true
