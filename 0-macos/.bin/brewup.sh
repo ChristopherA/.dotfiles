@@ -1,6 +1,9 @@
 #!/bin/bash
 # from https://apple.stackexchange.com/questions/206465/auto-updating-homebrew
 
+########
+### brewup
+
 brew=/usr/local/bin/brew
 logger=/usr/bin/logger
 
