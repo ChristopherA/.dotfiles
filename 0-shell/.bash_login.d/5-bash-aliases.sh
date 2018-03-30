@@ -26,3 +26,6 @@ alias l1='ls -1'
 
 # Concatenate and print content of files (add line numbers)
 alias catn="cat -n"
+
+# remove recursively .DS_store files added by MacOS Finder
+alias cleands=find . -name ".DS_Store" -type f -delete
