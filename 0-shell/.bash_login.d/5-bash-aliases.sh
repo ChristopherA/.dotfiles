@@ -28,4 +28,8 @@ alias l1='ls -1'
 alias catn="cat -n"
 
 # remove recursively .DS_store files added by MacOS Finder
-alias cleands=find . -name ".DS_Store" -type f -delete
+alias cleands="find . -name '.DS_Store' -type f -delete"
+
+# show diff of last git commit
+# from: https://stackoverflow.com/questions/10176601/git-diff-file-against-its-last-change
+alias gitlast="git log -p -1 ."
