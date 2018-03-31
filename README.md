@@ -12,7 +12,7 @@ Long range goal is that they will also work most versions of Unix.
 
 Always a work-in-progress, but usable.
 
-##Previous Versions
+## Previous Versions
 
 * Dotfiles, managed by Stow (last revision early 2017): https://github.com/ChristopherA/dotfiles-stow/
 * Dotfiles-old (last revision fall 2014): https://github.com/ChristopherA/dotfiles-old
