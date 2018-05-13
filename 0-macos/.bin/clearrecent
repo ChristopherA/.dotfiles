@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# ~/clearrecent: clears mac recent files and folder metadata
+
+# VLC
+open -a VLC
+wait 1
+osascript -e 'tell application "System Events" to click menu item "Clear Menu" of menu 1 of menu item "Open Recent" of menu 1 of menu bar item "File" of menu bar 1 of application process "VLC" ' >&/dev/null
+defaults delete ~/Library/Preferences/org.videolan.vlc.plist recentlyPlayedMedia
+defaults delete ~/Library/Preferences/org.videolan.vlc.plist recentlyPlayedMediaList
+killall VLC
+
+# Misc
+
+rm -rf ~/Library/Application\ Support/com.apple.sharedfilelist/*.LSSharedFileList.*
+defaults delete ~/Library/Preferences/com.apple.finder.plist FXRecentFolders
+defaults delete -g NSNavRecentPlaces
+
+# Finder
+
+osascript -e 'tell application "System Events" to click menu item "Clear Menu" of menu of menu item "Recent Items" of menu of menu bar item "Apple" of menu bar of process "Finder"' >&/dev/null
+wait 1
+killall "Finder"
