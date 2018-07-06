@@ -18,7 +18,6 @@ brew "stow"
 brew "wget"
 cask "atom"
 cask "cakebrew"
-cask "drivedx"
 cask "dropbox"
 cask "electrum"
 cask "google-chrome"
@@ -31,11 +30,8 @@ cask "transmission"
 cask "typora"
 cask "vlc"
 cask "vmware-fusion"
-cask "x-lite"
-mas "Affinity Designer", id: 824171161
-mas "Blackmagic Disk Speed Test", id: 425264550
 mas "Keynote", id: 409183694
-mas "macOS High Sierra", id: Install
 mas "Pages", id: 409201541
-mas "Pixelmator", id: 407963104
-mas "Startup Disk Full Fixer", id: 1346655838
+mas "Numbers", id: 409203825
+mas "iMoview", id: 408981434
+mas "GarageBand", id: 682658836
