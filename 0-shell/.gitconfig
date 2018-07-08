@@ -16,6 +16,6 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 [core]
-	excludesfile = /Volumes/Pool/Users/christophera/.gitignore_global
+	excludesfile = ~/.gitignore_global
 [commit]
 	gpgsign = true
