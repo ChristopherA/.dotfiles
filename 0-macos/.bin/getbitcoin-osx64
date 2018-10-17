@@ -1,0 +1,21 @@
+rm ~/.bin/bitcoin-cli
+rm ~/.bin/bitcoin-qt
+rm ~/.bin/bitcoin-tx
+rm ~/.bin/bitcoind
+export BITCOIN=bitcoin-core-0.17.0
+export BITCOINPLAIN=`echo $BITCOIN | sed 's/bitcoin-core/bitcoin/'`
+wget https://bitcoin.org/bin/$BITCOIN/$BITCOINPLAIN-osx64.tar.gz -O ~/.bin/$BITCOINPLAIN-osx64.tar.gz
+wget https://bitcoin.org/bin/$BITCOIN/SHA256SUMS.asc -O ~/.bin/SHA256SUMS.asc
+wget https://bitcoin.org/laanwj-releases.asc -O ~/.bin/laanwj-releases.asc
+gpg --import ~/.bin/laanwj-releases.asc
+gpg --verify ~/.bin/SHA256SUMS.asc
+echo '^ You should see "Good signature from..." in the above'
+shasum -a 256 ~/.bin/$BITCOINPLAIN-osx64.tar.gz | awk '{print $1}'
+grep osx64 ~/.bin/SHA256SUMS.asc | awk '{print $1}'
+echo '^ These two SHA256 sums should match.'
+tar xzf ~/.bin/$BITCOINPLAIN-osx64.tar.gz -C ~/.bin/
+mv ~/.bin/$BITCOINPLAIN/bin/* ~/.bin/
+rm ~/.bin/$BITCOINPLAIN-osx64.tar.gz
+rm ~/.bin/laanwj-releases.asc
+rm ~/.bin/SHA256SUMS.asc
+rm -rf ~/.bin/$BITCOINPLAIN
