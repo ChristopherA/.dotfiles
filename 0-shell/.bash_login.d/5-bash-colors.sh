@@ -29,7 +29,7 @@ export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 # export LSCOLORS=ExFxBxDxCxegedabagacad
 
 ## grep colors to highlight matches
-export GREP_OPTIONS='$LS_OPTIONS'
+export GREP_OPTIONS="$LS_OPTIONS"
 
 ## Git Colors
 git config --global color.ui true
