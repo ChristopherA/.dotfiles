@@ -2,7 +2,7 @@ rm ~/.bin/bitcoin-cli
 rm ~/.bin/bitcoin-qt
 rm ~/.bin/bitcoin-tx
 rm ~/.bin/bitcoind
-export BITCOIN=bitcoin-core-0.17.0.1
+export BITCOIN=bitcoin-core-0.18.0.
 export BITCOINPLAIN=`echo $BITCOIN | sed 's/bitcoin-core/bitcoin/'`
 wget https://bitcoin.org/bin/$BITCOIN/$BITCOINPLAIN-osx64.tar.gz -O ~/.bin/$BITCOINPLAIN-osx64.tar.gz
 wget https://bitcoin.org/bin/$BITCOIN/SHA256SUMS.asc -O ~/.bin/SHA256SUMS.asc
