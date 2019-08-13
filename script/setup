@@ -7,6 +7,10 @@
 # cd $DOTFILESDIRREL/..
 # DOTFILESDIR=$(pwd -P)
 
+set -e
+
+echo "==> $HOME/.dotfiles/script/setup: **** START ****"
+
 [ $(uname -s) = "Darwin" ] && export MACOS=1 && export UNIX=1
 [ $(uname -s) = "Linux" ] && export LINUX=1 && export UNIX=1
 uname -s | grep -q "_NT-" && export WINDOWS=1
@@ -33,3 +37,5 @@ then
   // to do
     echo "ERROR: These dotfiles do not work on Windows yet"
 fi
+
+echo "$HOME/.dotfiles/script/setup: **** COMPLETED ****"
