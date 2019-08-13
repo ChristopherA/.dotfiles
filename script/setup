@@ -1,0 +1,35 @@
+
+#!/bin/bash
+# ~/dotfiles/script/setup.sh is called by [Strap](https://github.com/MikeMcQuaid/strap) after the initial developer bootstrap
+
+# May want to use these globals from Strap in future, but are not needed now.
+# DOTFILESDIRREL=$(dirname $0)
+# cd $DOTFILESDIRREL/..
+# DOTFILESDIR=$(pwd -P)
+
+[ $(uname -s) = "Darwin" ] && export MACOS=1 && export UNIX=1
+[ $(uname -s) = "Linux" ] && export LINUX=1 && export UNIX=1
+uname -s | grep -q "_NT-" && export WINDOWS=1
+
+# Symlink the dotfiles in ~/.dotfiles to their appropriate places using [Gnu Stow](https://www.gnu.org/software/stow/)
+if [ $MACOS ]
+then
+  # Strap does not clone the .dotfiles with --recurse-submodules, this will do it:
+  git submodule update --recursive
+  # The apps in Brewfile are installed later by Strap, so you have to install it here first.
+  brew install stow
+  cd ~/.dotfiles
+  stow -R 0-shell
+  stow -R 0-macos
+  cd ~
+elif [ $LINUX ]
+then
+  cd ~/.dotfiles
+  stow -R 0-shell
+  stow -R 0-shell-debian
+  cd ~
+elif [ $WINDOWS ]
+then
+  // to do
+    echo "ERROR: These dotfiles do not work on Windows yet"
+fi
